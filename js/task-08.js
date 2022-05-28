@@ -1,3 +1,6 @@
+const formRef = document.querySelector(".login-form");
+const inputRef = document.querySelector("input");
+
 formRef.addEventListener("submit", formSubmitHandler);
 
 function formSubmitHandler(event) {

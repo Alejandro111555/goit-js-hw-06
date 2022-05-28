@@ -1,12 +1,10 @@
-const body = document.body;
-const untitledList = body.childNodes[3];
-const listItem = untitledList.children;
-console.log('Number of categories:' ,listItem.length);
-const itemCategories = [...listItem];
+const allCategoriesRef = document.querySelectorAll(`ul#categories li.item`);
+const numberOfCategories = allCategoriesRef.length;
+console.log(`Number of categories: ${numberOfCategories}`);
 
-console.log('Category:',itemCategories[0].childNodes[1].firstChild);
-console.log("Elements:",itemCategories[0].childNodes[3].children.length);
-console.log('Category:',itemCategories[1].childNodes[1].firstChild);
-console.log("Elements:",itemCategories[1].childNodes[3].children.length);
-console.log('Category:',itemCategories[2].childNodes[1].firstChild);
-console.log("Elements:",itemCategories[2].childNodes[3].children.length);
+allCategoriesRef.forEach((element) => {
+  const titleText = element.firstElementChild.textContent;
+  console.log(`Category: ${titleText}`);
+  const elementsRef = element.lastElementChild.children.length;
+  console.log(`Elements: ${elementsRef}`);
+});
